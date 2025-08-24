@@ -26,8 +26,6 @@ dotfiles/
   ```bash
   ./install.sh
   ```
-```
-```
 
 ## Components
 
