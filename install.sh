@@ -20,4 +20,8 @@ if pgrep -x "tmux" > /dev/null; then
     tmux source-file "$HOME/.config/tmux/tmux.conf"
 fi
 
+# Create symbolic link for nvim configuration
+echo "Creating nvim configuration symlink..."
+ln -sf "$PWD/nvim/" "$HOME/.config"
+
 echo "Dotfiles installation complete!"
