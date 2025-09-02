@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Development session setup script
+# Usage: ./dev-session.sh [directory] [session-name]
+
+# Set default values
+TARGET_DIR="${1:-$(pwd)}"
+SESSION_NAME="${2:-dev}"
+
+# Check if directory exists
+if [ ! -d "$TARGET_DIR" ]; then
+    echo "Error: Directory '$TARGET_DIR' does not exist."
+    exit 1
+fi
+
+# Convert to absolute path
+TARGET_DIR=$(realpath "$TARGET_DIR")
+
+# Check if tmux session already exists
+if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
+    echo "Session '$SESSION_NAME' already exists. Attaching to it..."
+    tmux attach-session -t "$SESSION_NAME"
+    exit 0
+fi
+
+# Create new tmux session (detached)
+tmux new-session -d -s "$SESSION_NAME" -c "$TARGET_DIR"
+
+# Rename first window and set it up for claude
+tmux rename-window -t "$SESSION_NAME:1" "claude"
+tmux send-keys -t "$SESSION_NAME:claude" "claude" Enter
+
+# Create second window for nvim
+tmux new-window -t "$SESSION_NAME" -n "nvim" -c "$TARGET_DIR"
+tmux send-keys -t "$SESSION_NAME:nvim" "nvim ." Enter
+
+# Create third window for terminal
+tmux new-window -t "$SESSION_NAME" -n "terminal" -c "$TARGET_DIR"
+
+# Select the claude window to start
+tmux select-window -t "$SESSION_NAME:claude"
+
+# Attach to the session
+tmux attach-session -t "$SESSION_NAME"
