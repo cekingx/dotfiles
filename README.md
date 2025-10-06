@@ -77,6 +77,17 @@ After installation:
    dev ~/projects/myproject myproject-dev
    ```
 
+## Dependencies
+
+- JetBrainsMono Nerd Font Mono fonts
+- GNU stow
+- i3
+- polybar
+- tmux
+- neovim
+- picom
+- rofi
+
 ## Contributing
 
 This is a personal dotfiles repository. Feel free to fork and adapt for your own use.
