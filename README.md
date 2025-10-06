@@ -87,6 +87,7 @@ After installation:
 - neovim
 - picom
 - rofi
+- wezterm via flatpak
 
 ## Contributing
 
