@@ -156,6 +156,8 @@ After installation:
 - [neovim](https://neovim.io/) - Text editor (≥0.9.0)
 - [picom](https://github.com/yshui/picom) - Compositor
 - [rofi](https://github.com/davatorium/rofi) - Application launcher
+- [feh](https://feh.finalrewind.org/) - Lightweight image viewer
+- wallpaper image at ~/Pictures/wallaper.png
 
 **Optional:**
 
