@@ -5,9 +5,11 @@ return {
       sources = {
         explorer = {
           ignored = true,
+          hidden = true,
         },
         files = {
           ignored = true,
+          hidden = true,
         },
       },
     },
