@@ -234,5 +234,17 @@ exec_always --no-startup-id picom -b
 # start a wezterm terminal
 bindsym $mod+Return exec flatpak run org.wezfurlong.wezterm
 
+# Set inner gaps (between windows)
+gaps inner 10
+
+# Set outer gaps (screen edges)
+gaps outer 5
+
+# Only enable gaps when more than one window
+smart_gaps on
+
+# Remove title bars (looks better with gaps)
+for_window [class=".*"] border pixel 2
+
 bindsym $mod+Shift+Return exec google-chrome
 bindsym $mod+space exec rofi -show drun
