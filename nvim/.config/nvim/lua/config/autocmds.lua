@@ -6,3 +6,14 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+vim.lsp.config("denols", {
+  root_markers = { "deno.json", "deno.jsonc" },
+})
+
+vim.lsp.config("ts_ls", {
+  root_markers = { "package.json" },
+  single_file_support = false,
+})
+
+vim.lsp.enable({ "denols", "ts_ls" })
