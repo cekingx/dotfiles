@@ -37,6 +37,10 @@ tmux send-keys -t "$SESSION_NAME:nvim" "nvim ." Enter
 # Create third window for terminal
 tmux new-window -t "$SESSION_NAME" -n "terminal" -c "$TARGET_DIR"
 
+# Create fourth window for nu shell
+tmux new-window -t "$SESSION_NAME" -n "nu" -c "$TARGET_DIR"
+tmux send-keys -t "$SESSION_NAME:nu" "nu" Enter
+
 # Select the claude window to start
 tmux select-window -t "$SESSION_NAME:claude"
 
