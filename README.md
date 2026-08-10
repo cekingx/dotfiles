@@ -16,6 +16,7 @@ dotfiles/
 ├── tmux/                  # Tmux terminal multiplexer configuration
 ├── i3/                    # i3 window manager configuration
 ├── polybar/               # Polybar status bar configuration
+├── herdr/                 # Herdr terminal session manager configuration
 ├── install-config.sh      # Config installation script (uses GNU stow)
 ├── install-bash.sh        # Bash script installation script
 └── README.md              # This file
@@ -108,6 +109,17 @@ LazyVim-based configuration with:
 - LazyVim extras: JSON, Markdown language support
 - Snacks.nvim picker configured to show hidden and ignored files
 - Custom plugin configurations in `lua/plugins/`
+
+### Herdr
+
+Terminal session manager configuration with:
+
+- Onboarding disabled
+- **Theme**: Terminal (auto-switch disabled)
+- Custom prefix key: `Ctrl+Space`
+- Keybindings for sidebar toggle, splits, detach, new tab, and workspace switching
+- Agent panel sorted by spaces
+- Agents not resumed on session restore
 
 ### Development Script
 

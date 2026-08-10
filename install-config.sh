@@ -26,4 +26,8 @@ stow -t ~ i3
 echo "Installing polybar configuration..."
 stow -t ~ polybar
 
+# Install herdr configuration using stow
+echo "Installing herdr configuration..."
+stow -t ~ herdr
+
 echo "Dotfiles installation complete!"
